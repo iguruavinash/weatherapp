@@ -9,12 +9,12 @@ import { WeatherPanelService } from './weatherpanel.service';
   providers: [WeatherPanelService],
 })
 export class WeatherPanelComponent implements OnInit {
-  cityName = 'London';
+  cityName = '';
   weatherData: any = {
     main: {
-      temp: 37,
+      temp: 0,
     },
-    weather: { id: 799, description: 'clear sky' },
+    weather: {  },
     isCityEditable: false,
   };
 
