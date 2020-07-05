@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, VERSION } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: [ './app.component.scss' ]
 })
-export class AppComponent {
-  title = 'MyWeatherApp';
+export class AppComponent  {
+  name = 'Angular ' + VERSION.major;
+  arrayOf9 = Array.of(1,2,3,4,5,6,7,8,9);
 }
