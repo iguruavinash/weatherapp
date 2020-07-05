@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import WeatherPanelService from './weatherpanel.service';
+import {WeatherPanelService} from './weatherpanel.service';
 
 @Component({
   selector: 'app-weather-panel',
