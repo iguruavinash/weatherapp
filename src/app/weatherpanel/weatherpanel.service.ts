@@ -10,7 +10,7 @@ export class WeatherPanelService {
   }
 
   getWeatherByCityName(cityName: string) {
-    const url = 'samples.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + APP_CONFIG.API_KEY;
+    const url = 'api.openweathermap.org/data/2.5/weather?units=metric&q=' + cityName + '&appid=' + APP_CONFIG.API_KEY;
     return this.httpClient.get(url).toPromise();
   }
 
