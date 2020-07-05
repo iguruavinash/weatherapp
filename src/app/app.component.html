@@ -1,4 +1,7 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="main-container">
+  <div class="col-sm-12">
+    <div class="col-sm-4" *ngFor="let panel of arrayOf9;">
+      <app-weather-panel></app-weather-panel>
+    </div>
+  </div>
+</div>
