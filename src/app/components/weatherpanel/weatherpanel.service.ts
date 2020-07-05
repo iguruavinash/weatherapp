@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 import { HttpClient } from '@angular/common/http';
-import  {APP_CONFIG}  from '../config';
+import {APP_CONFIG} from '../../config';
 
 @Injectable()
 export class WeatherPanelService {
