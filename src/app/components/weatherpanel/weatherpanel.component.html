@@ -1,12 +1,18 @@
-<div class="weather-panel">
+<div class="weather-panel" [ngClass]="{
+  'rainCls': weatherData.weather.id <= 799,
+  'sunnyCls': weatherData.weather.id == 800,
+  'cloudyCls': weatherData.weather.id > 800 }" (click)="editCityName()">
 <div class="header">
-  <h4>{{cityName}}</h4>
+  <h2 *ngIf="!weatherData.isCityEditable">{{cityName}}</h2>
+  <h2 *ngIf="weatherData.isCityEditable">
+    <input type="text"  [(ngModel)]="cityName" (keyup)="onKeyUp($event)">
+    <!-- <span class="glyphicon glyphicon-ok"></span>
+    <span class="glyphicon glyphicon-remove"></span> -->
+  </h2>
+
 </div>
-<div class="weather-info" [ngClass]="{
-  'rainCls': weatherData.weather.id <= 500,
-  'sunny': weatherData.weather.id == 800,
-  'cloudy': weatherData.weather.id > 800 }">
+<div class="weather-info" >
   <h3>{{weatherData.main.temp}} / &deg;C</h3>
-  <h5>Condition: {{weatherData.weather.description}}</h5>
+  <h4>Condition: {{weatherData.weather.description}}</h4>
 </div>
 </div>

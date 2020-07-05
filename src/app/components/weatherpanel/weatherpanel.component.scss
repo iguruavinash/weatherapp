@@ -1,7 +1,26 @@
 .weather-panel {
-  height: 120px;
+  height: 150px;
   margin: 10px 0;
   padding: 5px;
+  text-align: center;
   border: 1px solid #ccc;
   box-shadow: 2px 2px 2px #aaa;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &.sunnyCls {
+    background-image: url("../../../assets/sunny.jpg");
+  }
+  &.rainCls {
+    background-image: url("../../../assets/rain.jpg");
+  }
+  &.cloudyCls {
+    background-image: url("../../../assets/cloudy.jpg");
+  }
+
+  .glyphicon {
+    margin-left: 5px;
+    color: white
+  }
 }
