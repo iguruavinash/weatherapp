@@ -2,7 +2,11 @@
 <div class="header">
   <h4>{{cityName}}</h4>
 </div>
-<div class="weather-info">
+<div class="weather-info" [ngClass]="{
+  'rainCls': weatherData.weather.id <= 500,
+  'sunny': weatherData.weather.id == 800,
+  'cloudy': weatherData.weather.id > 800 }">
   <h3>{{weatherData.main.temp}} / &deg;C</h3>
+  <h5>Condition: {{weatherData.weather.description}}</h5>
 </div>
 </div>

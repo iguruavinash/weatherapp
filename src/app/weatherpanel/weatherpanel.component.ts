@@ -20,7 +20,7 @@ export class WeatherPanelComponent implements OnInit {
     "pressure": 1008,
     "humidity": 77
   },
-    weather: {}
+    weather: {id: 800, description: 'clear sky'}
   };
 
   constructor(
@@ -34,7 +34,10 @@ export class WeatherPanelComponent implements OnInit {
   onCityNameChange() {
     if(this.cityName) {
       this.weatherPanelService.getWeatherByCityName(this.cityName).then((response: any) => {
-        this.weatherData = response || {};
+        this.weatherData = {
+          main: response.main,
+          weather: response.weather[0] ? response.weather[0]: {id: 800, description: 'clear sky'}
+        };
       });
     }
   }
